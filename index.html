@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+    <head>
+         <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>A Birthday Journey 🎂</title> 
+           <link rel="stylesheet" href="home.css">
+         </head> 
+         <body> 
+            <main class="birthday-page">
+             <div class="content"> 
+
+
+                <p class="small-text">✨ A little surprise for you ✨</p> 
+                <h1>Are you ready?</h1> 
+
+                <p class="message"> Your birthday journey is about to begin... 🎂💖 </p>
+                 <div class="buttons"> <!-- YES takes her to the next page --> 
+
+                    <div class="buttons">
+
+    <a href="second.html" class="yes-btn">
+   <button>YES! 💖</button> 
+</a>
+
+    <button id="noBtn">
+        NO 😈
+    </button>
+    
+</a>
+
+</div>
+                    </div> </div> 
+                </main>
+                <script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", function () {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+</script>
+                 
+                </body> 
+ </html>

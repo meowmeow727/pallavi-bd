@@ -1,0 +1,351 @@
+```css
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Georgia, serif;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            #3b1d5a,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            #702963,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #090014,
+            #19002e,
+            #250038
+        );
+
+    padding: 60px 20px;
+
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.star {
+
+    position: fixed;
+
+    color: #ffd6f6;
+
+    font-size: 25px;
+
+    animation: twinkle 2s infinite alternate;
+
+}
+
+
+.star1 {
+    top: 10%;
+    left: 12%;
+}
+
+.star2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: 0.5s;
+}
+
+.star3 {
+    bottom: 20%;
+    left: 8%;
+    animation-delay: 1s;
+}
+
+.star4 {
+    bottom: 12%;
+    right: 12%;
+    animation-delay: 1.5s;
+}
+
+.star5 {
+    top: 45%;
+    right: 5%;
+    animation-delay: 0.8s;
+}
+
+
+@keyframes twinkle {
+
+    from {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.letter-page {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+
+.top-text {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+
+    color: #f7c8ed;
+
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+
+    text-align: left;
+
+    background: #fffafc;
+
+    color: #42253f;
+
+    padding: 55px 60px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4);
+
+    position: relative;
+
+    animation: letterAppear 1.2s ease;
+
+}
+
+
+/* Little paper line */
+
+.letter::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 60px;
+
+    height: 4px;
+
+    background: #d66ba0;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================
+   LETTER TEXT
+========================= */
+
+.hello {
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.letter h1 {
+
+    font-size: 40px;
+
+    color: #8e3d72;
+
+    margin-bottom: 30px;
+
+}
+
+
+.letter p {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+
+}
+
+
+.ending {
+
+    font-weight: bold;
+
+    color: #8e3d72;
+
+    margin-top: 30px;
+
+}
+
+
+.signature {
+
+    text-align: right;
+
+    font-style: italic;
+
+    margin-top: 35px;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #f5c6e6;
+
+    color: #5d2851;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(245, 198, 230, 0.5);
+
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes letterAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 35px 15px;
+
+    }
+
+
+    .letter {
+
+        padding: 45px 25px;
+
+    }
+
+
+    .letter h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .letter p {
+
+        font-size: 16px;
+
+    }
+
+}
+```

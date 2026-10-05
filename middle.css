@@ -1,0 +1,562 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, #ff4f9a, transparent 28%),
+        radial-gradient(circle at 85% 75%, #7b2cff, transparent 30%),
+        radial-gradient(circle at 50% 50%, #ff3cac, transparent 20%),
+        linear-gradient(135deg, #120020, #35005c, #18002b);
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: 90%;
+    max-width: 700px;
+
+    text-align: center;
+
+    padding: 50px 40px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(255, 100, 200, 0.3);
+
+    animation: cardAppear 1.2s ease;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-text {
+    font-size: 16px;
+
+    color: #ffd6ee;
+
+    margin-bottom: 15px;
+
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 52px;
+
+    margin-bottom: 10px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px #ff8acb,
+        0 0 25px #ff4fa3;
+}
+
+h2 {
+    font-size: 28px;
+
+    margin-bottom: 25px;
+
+    color: #ffd1ec;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.card img {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 0 20px rgba(255, 120, 200, 0.6),
+        0 0 50px rgba(255, 80, 180, 0.3);
+
+    margin-bottom: 25px;
+
+    transition: 0.4s;
+}
+
+.card img:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 30px #ff8acb,
+        0 0 70px #ff4fa3;
+}
+
+
+/* =========================
+   TYPING TEXT
+========================= */
+
+.typing {
+    min-height: 30px;
+
+    font-size: 18px;
+
+    color: #ffd6ee;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+    font-size: 75px;
+
+    margin: 10px 0 20px;
+
+    animation: cakeBounce 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #8a2670;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px white,
+        0 0 45px #ff70c8;
+}
+
+
+/* =========================
+   HIDDEN MESSAGE
+========================= */
+
+#message {
+    display: none;
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 20px;
+
+    animation: messageAppear 1s ease;
+}
+
+#message p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+#message p:first-child {
+    font-size: 23px;
+
+    font-weight: bold;
+
+    color: #ffd1ec;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    font-size: 30px;
+
+    opacity: 0.7;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    animation: floatHeart linear infinite;
+}
+
+.heart1 {
+    left: 8%;
+    bottom: -50px;
+    animation-duration: 8s;
+}
+
+.heart2 {
+    left: 25%;
+    bottom: -50px;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.heart3 {
+    left: 70%;
+    bottom: -50px;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.heart4 {
+    left: 88%;
+    bottom: -50px;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.heart5 {
+    left: 50%;
+    bottom: -50px;
+    animation-duration: 8s;
+    animation-delay: 4s;
+}
+
+
+/* =========================
+   FLOATING BALLOONS
+========================= */
+
+.balloon {
+    position: fixed;
+
+    bottom: -100px;
+
+    font-size: 45px;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    animation: balloonRise linear infinite;
+}
+
+.balloon1 {
+    left: 15%;
+    animation-duration: 9s;
+}
+
+.balloon2 {
+    left: 35%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.balloon3 {
+    left: 65%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+
+.balloon4 {
+    left: 85%;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    width: 10px;
+    height: 18px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation: confettiFall linear forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes cakeBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes balloonRise {
+
+    0% {
+        bottom: -100px;
+
+        transform:
+            translateX(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateX(35px)
+            rotate(8deg);
+    }
+
+    100% {
+        bottom: 110vh;
+
+        transform:
+            translateX(-30px)
+            rotate(-8deg);
+    }
+}
+
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 35px 15px;
+    }
+
+    .card {
+        width: 95%;
+
+        padding: 40px 22px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .card img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .typing {
+        font-size: 16px;
+    }
+
+    .cake {
+        font-size: 60px;
+    }
+
+    #message {
+        padding: 22px;
+    }
+
+    #message p {
+        font-size: 15px;
+    }
+}
+```
+```css
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.continue-btn {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #8a2670;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.continue-btn:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 20px white,
+        0 0 45px #ff70c8;
+}
+```

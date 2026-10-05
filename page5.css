@@ -1,0 +1,526 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, #ff4f9a, transparent 25%),
+        radial-gradient(circle at 85% 75%, #7b2cff, transparent 30%),
+        radial-gradient(circle at 50% 50%, #ff3cac, transparent 20%),
+        linear-gradient(135deg, #10001f, #35005c, #120020);
+         min-height: 100vh;
+    
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.surprise-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================
+   INTRO TEXT
+========================= */
+
+.small-text {
+    font-size: 18px;
+
+    margin-bottom: 12px;
+
+    color: #ffd6ee;
+
+    animation: fadeIn 1s ease;
+}
+
+h1 {
+    font-size: 58px;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 10px #ff8acb,
+        0 0 25px #ff4fa3,
+        0 0 50px #ff4fa3;
+
+    animation: titleGlow 2s infinite alternate;
+}
+
+.message {
+    font-size: 18px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift {
+    position: relative;
+
+    width: 190px;
+    height: 180px;
+
+    margin: 45px 0 30px;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+}
+
+.gift:hover {
+    transform: scale(1.08);
+}
+
+
+/* Gift box */
+
+.box {
+    position: absolute;
+
+    bottom: 0;
+    left: 15px;
+
+    width: 160px;
+    height: 120px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 82px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(255, 105, 180, 0.5);
+}
+
+
+/* Gift lid */
+
+.lid {
+    position: absolute;
+
+    top: 5px;
+    left: 0;
+
+    width: 190px;
+    height: 58px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 38px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    border: 2px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 15px;
+
+    z-index: 2;
+
+    transition: 0.9s;
+}
+
+
+/* Gift opens */
+
+.gift.open .lid {
+    transform:
+        translateY(-120px)
+        rotate(-18deg);
+}
+
+.gift.open .box {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 40px #ff66c4,
+        0 0 80px #ff66c4;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #8a2670;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+button:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 20px white,
+        0 0 45px #ff70c8;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+    display: none;
+
+    max-width: 680px;
+
+    margin-top: 20px;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(255, 100, 200, 0.3);
+
+    animation: finalReveal 1.2s ease;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.final-message.show {
+    display: block;
+}
+
+.final-message h2 {
+    font-size: 34px;
+
+    margin-bottom: 20px;
+
+    color: #ffd1ec;
+
+    text-shadow:
+        0 0 10px #ff7fc8,
+        0 0 25px #ff4fa3;
+}
+
+.final-message p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+.final-message h3 {
+    margin-top: 22px;
+
+    font-size: 23px;
+
+    color: #ffb7df;
+}
+
+.last-line {
+    margin-top: 25px;
+
+    font-style: italic;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+#confetti {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+.confetti-piece {
+    position: absolute;
+
+    top: -20px;
+
+    width: 10px;
+    height: 18px;
+
+    background: white;
+
+    animation: fall linear forwards;
+}
+
+.confetti-piece:nth-child(3n) {
+    width: 7px;
+    height: 14px;
+}
+
+.confetti-piece:nth-child(4n) {
+    border-radius: 50%;
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon {
+    position: fixed;
+
+    bottom: -100px;
+
+    font-size: 50px;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    animation: balloonRise linear forwards;
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle {
+    position: fixed;
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    animation: sparklePop 2s ease-in-out forwards;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fall {
+
+    0% {
+        top: -20px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 110vh;
+        opacity: 0;
+        transform:
+            rotate(720deg)
+            translateX(100px);
+    }
+}
+
+
+@keyframes balloonRise {
+
+    0% {
+        bottom: -100px;
+
+        transform:
+            translateX(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateX(40px)
+            rotate(10deg);
+    }
+
+    100% {
+        bottom: 110vh;
+
+        transform:
+            translateX(-40px)
+            rotate(-10deg);
+    }
+}
+
+
+@keyframes sparklePop {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.4)
+            rotate(90deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(0)
+            rotate(180deg);
+    }
+}
+
+
+@keyframes finalReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.7)
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+@keyframes titleGlow {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.03);
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    .gift {
+        transform: scale(0.9);
+
+        margin-top: 30px;
+    }
+
+    .final-message {
+        padding: 25px;
+
+        max-height: 65vh;
+
+        overflow-y: auto;
+    }
+
+    .final-message h2 {
+        font-size: 25px;
+    }
+
+    .final-message p {
+        font-size: 15px;
+    }
+}
+```

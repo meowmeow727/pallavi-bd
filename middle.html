@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Special Birthday 💖</title>
+
+    <link rel="stylesheet" href="middle.css">
+
+</head>
+
+<body>
+
+
+    <!-- =========================
+         FLOATING HEARTS
+    ========================== -->
+
+    <div class="heart heart1">💖</div>
+    <div class="heart heart2">💕</div>
+    <div class="heart heart3">💗</div>
+    <div class="heart heart4">💝</div>
+    <div class="heart heart5">💖</div>
+
+
+    <!-- =========================
+         FLOATING BALLOONS
+    ========================== -->
+
+    <div class="balloon balloon1">🎈</div>
+    <div class="balloon balloon2">🎈</div>
+    <div class="balloon balloon3">🎈</div>
+    <div class="balloon balloon4">🎈</div>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="container">
+
+        <div class="card">
+
+
+            <p class="small-text">
+                ✨ TODAY IS A SPECIAL DAY ✨
+            </p>
+
+
+            <h1>
+                Dear Pallavi 💕
+            </h1>
+
+
+            <h2>
+                Happy Birthday! 🎂
+            </h2>
+
+
+            <!-- Birthday photo -->
+
+            <img src="imgs/pfp.JPG"
+                alt="Darshika"
+            >
+
+
+            <!-- Typing text -->
+
+            <p
+                class="typing"
+                id="typing">
+            </p>
+
+
+            <!-- Cake -->
+
+            <div class="cake">
+                🎂
+            </div>
+
+
+            <!-- Surprise button -->
+
+            <button onclick="showSurprise()">
+                🎁 Open Your Surprise
+            </button>
+
+
+            <!-- =========================
+                 HIDDEN MESSAGE
+            ========================== -->
+
+            <div id="message">
+
+                <p>
+                    Dear Pallavi 💖
+                </p>
+
+                <p>
+                    Wishing you a day filled with
+                    happiness, laughter, love and
+                    unforgettable moments. ✨
+                </p>
+
+                <p>
+                    May all your dreams come true
+                    and may this year give you
+                    countless reasons to smile. 🌸
+                </p>
+
+                <p>
+                    Keep smiling, keep shining
+                    and keep being YOU! 💖
+                </p>
+
+                <p>
+                    🎉 Happy Birthday, pallavi! 🎉
+                </p>
+
+
+                <!-- Continue button -->
+
+                <a
+                    href="page3.html"
+                    class="continue-btn">
+                    <button>Continue the Journey 💕 →</button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           TYPING ANIMATION
+        ========================== */
+
+        const text =
+            "Someone special deserves a special birthday... 💕";
+
+        let index = 0;
+
+        function typeText() {
+
+            if (index < text.length) {
+
+                document.getElementById("typing").innerHTML +=
+                    text.charAt(index);
+
+                index++;
+
+                setTimeout(typeText, 60);
+            }
+        }
+
+        typeText();
+
+
+        /* =========================
+           SURPRISE BUTTON
+        ========================== */
+
+        function showSurprise() {
+
+            document.getElementById("message").style.display =
+                "block";
+
+            createConfetti();
+        }
+
+
+        /* =========================
+           CONFETTI
+        ========================== */
+
+        function createConfetti() {
+
+            for (let i = 0; i < 120; i++) {
+
+                const confetti =
+                    document.createElement("div");
+
+                confetti.classList.add("confetti");
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+                confetti.style.animationDuration =
+                    (Math.random() * 2 + 2) + "s";
+
+                confetti.style.background =
+                    `hsl(${Math.random() * 360},
+                    100%, 60%)`;
+
+                document.body.appendChild(confetti);
+
+
+                setTimeout(function () {
+
+                    confetti.remove();
+
+                }, 4000);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
+

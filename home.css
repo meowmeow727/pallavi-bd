@@ -1,0 +1,40 @@
+
+* Remove default spacing */ * {
+     margin: 0;
+      padding: 0;
+       box-sizing: border-box; 
+    }
+    
+    /* Whole page */
+     body { 
+        min-height: 100vh; 
+        font-family: Arial, sans-serif;
+         background: linear-gradient( 135deg, #ff758c, #ff7eb3, #8e44ad, #6c5ce7 );
+          display: flex; 
+          justify-content: center; 
+          align-items: center; 
+          margin: 0;
+    
+    overflow-x: hidden;
+    overflow-y: auto;
+        } 
+        
+        /* Main birthday section */
+         .birthday-page { 
+            width: 100%;
+             min-height: 100vh;
+              display: flex; 
+              justify-content: center;
+               align-items: center; 
+               text-align: center; 
+            } 
+            
+            /* Content box */ 
+            .content { 
+                width: 90%;
+                 max-width: 700px;
+                  padding: 50px 30px;
+                   background: rgba(255, 255, 255, 0.15);
+                    backdrop-filter: blur(15px);
+                     border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 25px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); color: white; } /* Small text */ .small-text { font-size: 18px; margin-bottom: 20px; } /* Main heading */ h1 { font-size: 60px; margin-bottom: 20px; } /* Message */ .message { font-size: 20px; line-height: 1.6; margin-bottom: 35px; } /* Buttons container */ .buttons { display: flex; justify-content: center; gap: 20px; } /* Both buttons */ button { border: none; padding: 15px 35px; font-size: 18px; font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s; } /* YES button */ #yesBtn { background: white; color: #e84393; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); } /* YES hover */ #yesBtn:hover { transform: scale(1.1); }
+ /* NO button */ #noBtn { background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid white; position: relative; } /* NO hover */ #noBtn:hover { transform: scale(1.05); } /* Mobile screen */ @media (max-width: 600px) { h1 { font-size: 42px; } .message { font-size: 17px; } .buttons { flex-direction: column; align-items: center; } button { width: 180px; } }

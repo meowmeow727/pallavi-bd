@@ -1,0 +1,335 @@
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+
+    color: white;
+
+    /* Night sky */
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #6c2b8f,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            #d63384,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #12002f,
+            #240046,
+            #3c096c
+        );
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page2 {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.card {
+
+    width: 90%;
+
+    max-width: 650px;
+
+    padding: 60px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 40px rgba(255, 100, 200, 0.2);
+
+    animation: cardAppear 1.2s ease;
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.subtitle {
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.9;
+
+}
+
+
+.card h1 {
+
+    font-size: 60px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.main-text {
+
+    font-size: 23px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.message {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    opacity: 0.9;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #9c2c77;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(255, 255, 255, 0.6);
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+
+    position: absolute;
+
+    font-size: 30px;
+
+    opacity: 0.7;
+
+    animation: floatHeart 7s linear infinite;
+
+}
+
+
+.heart1 {
+    left: 10%;
+    bottom: -50px;
+    animation-delay: 0s;
+}
+
+
+.heart2 {
+    left: 30%;
+    bottom: -50px;
+    animation-delay: 2s;
+}
+
+
+.heart3 {
+    left: 70%;
+    bottom: -50px;
+    animation-delay: 4s;
+}
+
+
+.heart4 {
+    left: 90%;
+    bottom: -50px;
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes floatHeart {
+
+    from {
+
+        transform: translateY(0)
+                   rotate(0deg);
+
+    }
+
+    to {
+
+        transform: translateY(-110vh)
+                   rotate(25deg);
+
+    }
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .card {
+
+        padding: 45px 25px;
+
+    }
+
+
+    .card h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .main-text {
+
+        font-size: 19px;
+
+    }
+
+
+    .message {
+
+        font-size: 15px;
+
+    }
+
+}
+
+.next-btn {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #9c2c77;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    transform: scale(1.08);
+
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+}
